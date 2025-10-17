@@ -190,6 +190,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Habitacion\Lista_de_Habitaciones.cshtml" />
     <Content Include="Views\Habitacion\Editar_Habitacion.cshtml" />
+    <Content Include="Views\Habitacion\Detalles_Habitacion.cshtml" />
+    <Content Include="Views\Habitacion\Crear_Habitacion.cshtml" />
+    <Content Include="Views\Habitacion\Eliminar_Habitacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,6 +229,10 @@
     <ProjectReference Include="..\Practica1.Abstracciones\Practica1.Abstracciones.csproj">
       <Project>{f7772818-e0c0-4045-a7db-acbd75b34ce9}</Project>
       <Name>Practica1.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Practica1.LogicaNegocio\Practica1.LogicaNegocio.csproj">
+      <Project>{BB8517C2-CF54-45B0-9C10-27DDF2D27306}</Project>
+      <Name>Practica1.LogicaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

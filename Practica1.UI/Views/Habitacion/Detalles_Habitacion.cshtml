@@ -1,0 +1,122 @@
+﻿@model Practica1.Abstracciones.ModelosUI.Habitaciones.HabitacionDTO
+
+@{
+    ViewBag.Title = "Detalles_Habitacion";
+}
+
+<h2>Detalles_Habitacion</h2>
+
+<div>
+    <h4>HabitacionDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadHuespedesAdmitidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadHuespedesAdmitidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadCamas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadCamas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadBanos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadBanos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponsableLimpieza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsableLimpieza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostoLimpieza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostoLimpieza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostoReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostoReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaRegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaModificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

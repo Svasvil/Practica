@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.UI", "Practica1.UI\Practica1.UI.csproj", "{AD24FDEA-62AE-4DC9-9289-86CB451E56D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.Abstracciones", "Practica1.Abstracciones\Practica1.Abstracciones.csproj", "{F7772818-E0C0-4045-A7DB-ACBD75B34CE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.LogicaNegocio", "Practica1.LogicaNegocio\Practica1.LogicaNegocio.csproj", "{BB8517C2-CF54-45B0-9C10-27DDF2D27306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F7772818-E0C0-4045-A7DB-ACBD75B34CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7772818-E0C0-4045-A7DB-ACBD75B34CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7772818-E0C0-4045-A7DB-ACBD75B34CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

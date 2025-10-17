@@ -1,4 +1,6 @@
-﻿using Practica1.Abstracciones.ModelosUI.Habitaciones;
+﻿using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
+using Practica1.Abstracciones.ModelosUI.Habitaciones;
+using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,33 +11,24 @@ namespace Practica1.UI.Controllers
 {
     public class HabitacionController : Controller
     {
+        private readonly IObtenerListaHabitacionesLN _ObtenerListaHabitacionesLN;
+
+        public HabitacionController() {
+            _ObtenerListaHabitacionesLN = new ObtenerListaHabitacionesLN();
+        }
 
         ///Lista de Habitaciones 
         // GET: Habitacion
         public ActionResult Lista_de_Habitaciones()
         {
-            List<HabitacionDTO> listaHabitaciones = new List<HabitacionDTO>(); //Creamos una lista de habitaciones 
-            listaHabitaciones.Add(new HabitacionDTO //Le agregamos datos a la habitacion
-            {
-                Codigo = 1,
-                Nombre = "Habitacion Sencilla",
-                Ubicacion = "Primer Piso",
-                CantidadHuespedesAdmitidos = 2,
-                CantidadCamas = 1,
-                CantidadBanos = 1,
-                ResponsableLimpieza = "Juan Perez",
-                CostoLimpieza = 50,
-                CostoReserva = 100,
-                TipoHabitacion = 1,
-                Estado = 1,
-         
-            });
-            return View(listaHabitaciones); //Le pasamos la lista a la vista y le decimos que muestre la lista que creamos 
+            List<HabitacionDTO> listaHabitaciones = _ObtenerListaHabitacionesLN.Obtener();
+
+            return View(listaHabitaciones);
         }
 
 
         // GET: Habitacion/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Detalles_Habitacion(int id)
         {
             return View();
         }
@@ -44,7 +37,7 @@ namespace Practica1.UI.Controllers
         //Crear 
 
         // GET: Habitacion/Create
-        public ActionResult Create()
+        public ActionResult Crear_Habitacion()
         {
             return View();
         }
@@ -102,14 +95,14 @@ namespace Practica1.UI.Controllers
         }
 
         // GET: Habitacion/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Eliminar_Habitacion(int id)
         {
             return View();
         }
 
         // POST: Habitacion/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Eliminar_Habitacion(int id, FormCollection collection)
         {
             try
             {
