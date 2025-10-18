@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="General\GestionFechas\Fecha.cs" />
     <Compile Include="Habitaciones\AgregarHabitacionesLN\AgregarHabitacionesLN.cs" />
+    <Compile Include="Habitaciones\EditarHabitacionesLN\EditarHabitacionLN.cs" />
     <Compile Include="Habitaciones\ListarHabitacionesLN\ObtenerListaHabitacionesLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

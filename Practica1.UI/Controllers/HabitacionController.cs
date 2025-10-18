@@ -1,7 +1,9 @@
 ﻿using Practica1.Abstracciones.LogicaNegocio.Habitaciones.AgregarHabitaciones;
+using Practica1.Abstracciones.LogicaNegocio.Habitaciones.EditarHabitaciones;
 using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
 using Practica1.LogicaNegocio.Habitaciones.AgregarHabitacionesLN;
+using Practica1.LogicaNegocio.Habitaciones.EditarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,12 @@ namespace Practica1.UI.Controllers
     {
         private readonly IObtenerListaHabitacionesLN _ObtenerListaHabitacionesLN;
         private readonly IAgregarHabitacionesLN _AgregarHabitacionesLN;
+        private readonly IEditarHabitacionLN _EditarHabitacionLN;
 
         public HabitacionController() {
             _ObtenerListaHabitacionesLN = new ObtenerListaHabitacionesLN();
             _AgregarHabitacionesLN = new AgregarHabitacionesLN();
+            _EditarHabitacionLN = new EditarHabitacionLN();
         }
 
         ///Lista de Habitaciones 
@@ -67,36 +71,22 @@ namespace Practica1.UI.Controllers
         // GET: Habitacion/Edit/5
         public ActionResult Editar_Habitacion(int id)
         {
-            HabitacionDTO habitacion = new HabitacionDTO
-            {
-                Codigo = 1,
-                Nombre = "Habitacion Sencilla",
-                Ubicacion = "Primer Piso",
-                CantidadHuespedesAdmitidos = 2,
-                CantidadCamas = 1,
-                CantidadBanos = 1,
-                ResponsableLimpieza = "Juan Perez",
-                CostoLimpieza = 50,
-                CostoReserva = 100,
-                TipoHabitacion = 1,
-                Estado = 1,
-            };
-            return View(habitacion);
+           
+            return View();
         }
 
-        // POST: Habitacion/Edit/5
         [HttpPost]
-        public ActionResult Editar_Habitacion(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Editar_Habitacion(HabitacionDTO HabitacionEditada)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                int CantidadHabitacionEditada = await _EditarHabitacionLN.Editar(HabitacionEditada);
+                return RedirectToAction("Lista_de_Habitaciones", "Habitacion");
             }
             catch
             {
-                return View();
+                return View(HabitacionEditada);
             }
         }
 

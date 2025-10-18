@@ -1,4 +1,6 @@
-﻿using Practica1.Abstracciones.ModelosUI.Habitaciones;
+﻿using Practica1.Abstracciones.AccesoDatos.Habitaciones.AgregarHabitacion;
+using Practica1.Abstracciones.AccesoDatos.Habitaciones.EditarHabitacion;
+using Practica1.Abstracciones.ModelosUI.Habitaciones;
 using Practica1.AccesoDat.Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.EditarHabitacionesAD
 {
-    public class EditarHabitacion
+    public class EditarHabitacion : IEditarHabitacion
     {
 
         private ObjetoContexto _ObjetoContexto;
@@ -19,7 +21,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.EditarHabitacionesAD
         }
         //Creamos el metodo para editar una habitacion y que recibe como parametro un objeto de tipo HabitacionDTO , ademas lo que hacemos es un where de la habitacion que queremos editar meditante el ID
         // y lo guardamos en una variable de tipo HabitacionesAccesoDatos, 
-        public int Editar(HabitacionDTO HabitacionGuardar) { 
+        public async Task<int> Editar(HabitacionDTO HabitacionGuardar) { 
             int cantidadRegistrosAfectados = 0; 
 
             HabitacionesAccesoDatos habitacionEditar = _ObjetoContexto.InfoHabitaciones
