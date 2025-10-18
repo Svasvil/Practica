@@ -14,6 +14,11 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.AgregarHabitacionAD
         private ObjetoContexto _ObjetoContexto;
 
 
+        public AgregarHabitacion()
+        {
+            _ObjetoContexto = new ObjetoContexto();
+        }
+
         public async Task <int> Agregar(HabitacionDTO HabitacionNueva) //Tenemos que hacer el metodo asincrono para q no bloquee la aplicacion
         {
           // aca pasamos el objeto  a entidad lo q hicmos en el metodo ConvertirObjEntidad

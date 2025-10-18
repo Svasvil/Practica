@@ -1,9 +1,12 @@
-﻿using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
+﻿using Practica1.Abstracciones.LogicaNegocio.Habitaciones.AgregarHabitaciones;
+using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
+using Practica1.LogicaNegocio.Habitaciones.AgregarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,9 +15,11 @@ namespace Practica1.UI.Controllers
     public class HabitacionController : Controller
     {
         private readonly IObtenerListaHabitacionesLN _ObtenerListaHabitacionesLN;
+        private readonly IAgregarHabitacionesLN _AgregarHabitacionesLN;
 
         public HabitacionController() {
             _ObtenerListaHabitacionesLN = new ObtenerListaHabitacionesLN();
+            _AgregarHabitacionesLN = new AgregarHabitacionesLN();
         }
 
         ///Lista de Habitaciones 
@@ -44,13 +49,14 @@ namespace Practica1.UI.Controllers
 
         // POST: Habitacion/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Crear_Habitacion(HabitacionDTO NuevaHabitacion)
         {
             try
             {
-                // TODO: Add insert logic here
+                int CantidadHabitacionAgregada = await _AgregarHabitacionesLN.Agregar(NuevaHabitacion);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Lista_de_Habitaciones", "Habitacion");
+
             }
             catch
             {
