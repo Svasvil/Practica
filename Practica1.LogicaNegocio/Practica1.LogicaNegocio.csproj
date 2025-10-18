@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\GestionFechas\Fecha.cs" />
+    <Compile Include="Habitaciones\AgregarHabitacionesLN\AgregarHabitacionesLN.cs" />
     <Compile Include="Habitaciones\ListarHabitacionesLN\ObtenerListaHabitacionesLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -51,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\Habitaciones\AgregarHabitacionAD\AgregarHabitacion.cs" />
+    <Compile Include="AccesoDatos\Habitaciones\EditarHabitacionesAD\EditarHabitacion.cs" />
+    <Compile Include="AccesoDatos\Habitaciones\EliminarHabitacionAD\EliminarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ListaHabitacionesAD\ObtenerListaHabitaciones.cs" />
+    <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID_AD\ObtenerHabitacionID.cs" />
     <Compile Include="Entidades\HabitacionesAccesoDatos.cs" />
     <Compile Include="ObjetoContexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
