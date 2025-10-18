@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Practica1.LogicaNegocio</RootNamespace>
     <AssemblyName>Practica1.LogicaNegocio</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,10 @@
     <ProjectReference Include="..\Practica1.Abstracciones\Practica1.Abstracciones.csproj">
       <Project>{F7772818-E0C0-4045-A7DB-ACBD75B34CE9}</Project>
       <Name>Practica1.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Practica1.AccesoDat\Practica1.AccesoDatos.csproj">
+      <Project>{B771B3C6-E570-4142-AABC-6E55BF8D622B}</Project>
+      <Name>Practica1.AccesoDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

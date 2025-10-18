@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.Abstracciones", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.LogicaNegocio", "Practica1.LogicaNegocio\Practica1.LogicaNegocio.csproj", "{BB8517C2-CF54-45B0-9C10-27DDF2D27306}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.AccesoDatos", "Practica1.AccesoDat\Practica1.AccesoDatos.csproj", "{B771B3C6-E570-4142-AABC-6E55BF8D622B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB8517C2-CF54-45B0-9C10-27DDF2D27306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

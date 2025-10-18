@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 namespace Practica1.Abstracciones.ModelosUI.Habitaciones
 {
     public  class HabitacionDTO
-    {
-        //Estas son los atributos que tiene una habitacion , en este caso se usara para el CRUD.
+    {        //Estas son los atributos que tiene una habitacion , en este caso se usara para el CRUD.
+        [Display(Name = "ID habitacion")]
+        public  int ID { get; set; }
+
+        
         [Display(Name ="Codigo Habitacion")]
-        public int Codigo { get; set; }
+        public int  Codigo { get; set; }
         [Display(Name = "Nombre Habitacion ")]
         public string Nombre { get; set; }
         [Display(Name ="Ubicacion de la habitacion ")]
@@ -28,18 +31,16 @@ namespace Practica1.Abstracciones.ModelosUI.Habitaciones
         [Display(Name = "Persona encargada de limpieza")]
         public  string ResponsableLimpieza { get; set; }
 
-        [Display(Name = "Costo por la limpieza")]
-        public int CostoLimpieza { get; set; }
-        [Display(Name = "Costo por la reserva")]
-        public int CostoReserva  { get; set; }
-        [Display(Name = "Codigo Repuesto")]
+        public decimal CostoLimpieza { get; set; }
+        public decimal CostoReserva { get; set; }
+        [Display(Name = "Tipo Habitacion")]
         public int  TipoHabitacion { get; set; }
-        [Display(Name = "Codigo Repuesto")]
+        [Display(Name = "Estado Habitacion")]
         public int  Estado { get; set; }
 
         //Fechas 
         public DateTime FechaRegistro { get; set; }
-        public DateTime FechaModificacion { get; set; }
+        public DateTime? FechaModificacion { get; set; }
 
     }
 }
