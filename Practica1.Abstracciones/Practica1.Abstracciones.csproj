@@ -46,6 +46,7 @@
     <Compile Include="AccesoDatos\Habitaciones\AgregarHabitacion\IAgregarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\EditarHabitacion\IEditarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ListaHabitaciones\IObtenerListaHabitacionesAD.cs" />
+    <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID\IObtenerHabitacionID.cs" />
     <Compile Include="LogicaNegocio\General\GestionFechas\IFecha.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\AgregarHabitaciones\IAgregarHabitacionesLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\EditarHabitaciones\IEditarHabitacionLN.cs" />
