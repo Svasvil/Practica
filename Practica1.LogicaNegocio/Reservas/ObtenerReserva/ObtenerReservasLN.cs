@@ -17,7 +17,15 @@ namespace Practica1.LogicaNegocio.Reservas.ObtenerReserva
         {
             return _ObtenerReservaAD.ObtenerTodas();
         }
-        public List<ReservacionesDTO> ObtenerPorHabitacion(int IdHabitacion)
+
+
+        public List<ReservacionesDTO> Obtener()
+        {
+            return _ObtenerReservaAD.ObtenerTodas();
+        }
+
+    
+        public List<ReservacionesDTO> Obtener(int IdHabitacion)
         {
             return _ObtenerReservaAD.ObtenerUnaHabitacion(IdHabitacion);
         }

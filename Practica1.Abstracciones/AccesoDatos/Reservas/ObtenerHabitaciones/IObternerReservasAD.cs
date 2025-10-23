@@ -13,7 +13,7 @@ namespace Practica1.Abstracciones.AccesoDatos.Reservas.ObtenerHabitaciones
 
 
         List<ReservacionesDTO> ObtenerUnaHabitacion(int IdHabitacion);
-        List<ReservacionesDTO> ObtenerUnaHabitacion();
+
     }
 
 
