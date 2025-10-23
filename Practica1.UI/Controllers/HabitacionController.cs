@@ -2,7 +2,6 @@
 using Practica1.Abstracciones.LogicaNegocio.Habitaciones.EditarHabitaciones;
 using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
-using Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD;
 using Practica1.LogicaNegocio.Habitaciones.AgregarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.EditarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
@@ -18,14 +17,14 @@ namespace Practica1.UI.Controllers
         private readonly IObtenerListaHabitacionesLN _ObtenerListaHabitacionesLN;
         private readonly IAgregarHabitacionesLN _AgregarHabitacionesLN;
         private readonly IEditarHabitacionLN _EditarHabitacionLN;
-        private readonly ObtenerHabitacionID _ObtenerHabitacionID;
+       // private readonly ObtenerHabitacionID _ObtenerHabitacionID;
 
         public HabitacionController()
         {
             _ObtenerListaHabitacionesLN = new ObtenerListaHabitacionesLN();
             _AgregarHabitacionesLN = new AgregarHabitacionesLN();
             _EditarHabitacionLN = new EditarHabitacionLN();
-            _ObtenerHabitacionID = new ObtenerHabitacionID();
+            //_ObtenerHabitacionID = new ObtenerHabitacionID();
         }
         public ActionResult Lista_de_Habitaciones()
         {
@@ -58,7 +57,8 @@ namespace Practica1.UI.Controllers
         }
         public ActionResult Editar_Habitacion(int id)
         {
-            HabitacionDTO habitacion = _ObtenerHabitacionID.obtener(id);
+            //HabitacionDTO habitacion = _ObtenerHabitacionID.obtener(id);
+            HabitacionDTO habitacion = new HabitacionDTO();
             return View(habitacion);
         }
 

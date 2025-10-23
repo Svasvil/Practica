@@ -40,7 +40,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.EditarHabitacionesAD
                 habitacionEditar.CantidadCamas = HabitacionGuardar.CantidadCamas;
                 habitacionEditar.CantidadBanos = HabitacionGuardar.CantidadBanos;
                 habitacionEditar.CantidadHuespedesAdmitidos = HabitacionGuardar.CantidadHuespedesAdmitidos;
-                habitacionEditar.Codigo = HabitacionGuardar.Codigo;
+               habitacionEditar.Codigo = HabitacionGuardar.Codigo;
                 habitacionEditar.CostoLimpieza = (int)HabitacionGuardar.CostoLimpieza;
                 habitacionEditar.CostoReserva = (int)HabitacionGuardar.CostoReserva;
                 habitacionEditar.Estado = HabitacionGuardar.Estado;

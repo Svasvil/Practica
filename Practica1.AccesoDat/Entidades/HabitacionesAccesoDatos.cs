@@ -8,36 +8,36 @@ using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.Entidades
 {
-    [Table("InfoHabitaciones")]
+    [Table("HABITACIONES")]
     public class HabitacionesAccesoDatos
     {
-        [Column("ID")]
+        [Column("Id")]
         public int ID { get; set; }
-        [Column("CODIGO")]
-        public int Codigo { get; set; }
-        [Column("NOMBRE")]
+        [Column("CodigoDeHabitacion")]
+        public string Codigo { get; set; }
+        [Column("NombreDeHabitacion")]
         public string Nombre { get; set; }
-        [Column("UBICACION")]
+        [Column("Ubicacion")]
         public string Ubicacion { get; set; }
-        [Column("CANTIDAD_HUESPEDES_PERMITIDOS")]
+        [Column("CantidadDeHuespedesPermitidos")]
         public int CantidadHuespedesAdmitidos { get; set; }
-        [Column("CANTIDAD_DE_CAMAS")]
+        [Column("CantidadDeCamas")]
         public int CantidadCamas { get; set; }
-        [Column("CANTIDAD_DE_BANIOS")]
+        [Column("CantidadDeBanos")]
         public int CantidadBanos { get; set; }
-        [Column("RESPONSABLE_DE_LIMPIEZA")]
+        [Column("EncargadoDeLimpieza")]
         public string ResponsableLimpieza { get; set; }
-        [Column("COSTO_DE_LIMPIEZA")]
-        public int CostoLimpieza { get; set; } 
-        [Column("COSTO_DE_RESERVA")]
-        public int CostoReserva { get; set; }   
-        [Column("TIPO_DE_HABITACION")]
+        [Column("CostoDeLimpieza")]
+        public decimal CostoLimpieza { get; set; } 
+        [Column("CostoDeReserva")]
+        public decimal CostoReserva { get; set; }   
+        [Column("TipoDeHabitacion")]
         public int TipoHabitacion { get; set; }
         [Column("ESTADO")]
-        public int Estado { get; set; }
-        [Column("FECHA_DE_REGISTRO")]
+        public bool Estado { get; set; }
+        [Column("FechaDeRegistro")]
         public DateTime FechaRegistro { get; set; }
-        [Column("FECHA_DE_MODIFICACION")]
+        [Column("FechaDeModificacion")]
         public DateTime? FechaModificacion { get; set; }
     }
 }

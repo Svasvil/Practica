@@ -15,7 +15,7 @@ namespace Practica1.Abstracciones.ModelosUI.Habitaciones
 
         
         [Display(Name ="Codigo Habitacion")]
-        public int  Codigo { get; set; }
+        public string  Codigo { get; set; }
         [Display(Name = "Nombre Habitacion ")]
         public string Nombre { get; set; }
         [Display(Name ="Ubicacion de la habitacion ")]
@@ -36,7 +36,7 @@ namespace Practica1.Abstracciones.ModelosUI.Habitaciones
         [Display(Name = "Tipo Habitacion")]
         public int  TipoHabitacion { get; set; }
         [Display(Name = "Estado Habitacion")]
-        public int  Estado { get; set; }
+        public bool  Estado { get; set; }
 
         //Fechas 
         public DateTime FechaRegistro { get; set; }
