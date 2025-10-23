@@ -19,7 +19,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ListaRepuestosAD
 
         public List<HabitacionDTO> obtener() {
 
-            List<HabitacionDTO> listaHabitaciones = (from habitacion in objContexto.InfoHabitaciones
+            List<HabitacionDTO> listaHabitaciones = (from habitacion in objContexto.HABITACIONES
                                                      select new HabitacionDTO
                                                      {
                                                          ID= habitacion.ID, 

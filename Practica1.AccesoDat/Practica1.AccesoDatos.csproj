@@ -58,6 +58,7 @@
     <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID_AD\ObtenerHabitacionID.cs" />
     <Compile Include="AccesoDatos\Reservas\ObtenerReservas\ObtenerReservasAD.cs" />
     <Compile Include="Entidades\HabitacionesAccesoDatos.cs" />
+    <Compile Include="Entidades\ReservasAccesoDatos.cs" />
     <Compile Include="ObjetoContexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

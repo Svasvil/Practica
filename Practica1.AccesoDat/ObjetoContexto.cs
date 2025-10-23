@@ -14,6 +14,7 @@ namespace Practica1.AccesoDat
             Database.SetInitializer<ObjetoContexto>(null);
         }
 
-        public  DbSet<HabitacionesAccesoDatos> InfoHabitaciones { get; set; }
+        public  DbSet<HabitacionesAccesoDatos> HABITACIONES { get; set; }
+        public DbSet<ReservasAccesoDatos> RESERVACIONES { get; set; }
     }
 }

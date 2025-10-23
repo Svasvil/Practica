@@ -28,7 +28,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.EditarHabitacionesAD
 
             
 
-            HabitacionesAccesoDatos habitacionEditar = await _ObjetoContexto.InfoHabitaciones
+            HabitacionesAccesoDatos habitacionEditar = await _ObjetoContexto.HABITACIONES
                 .Where(HabitacionBuscar => HabitacionBuscar.ID == HabitacionGuardar.ID)
                 .FirstOrDefaultAsync();
 

@@ -20,7 +20,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD
 
         public async Task<HabitacionDTO> Obtener(int id)
         {
-            var habitacion = await _contexto.InfoHabitaciones
+            var habitacion = await _contexto.HABITACIONES
                 .Where(h => h.ID == id)
                 .FirstOrDefaultAsync();
 
