@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,11 +47,14 @@
     <Compile Include="AccesoDatos\Habitaciones\EditarHabitacion\IEditarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ListaHabitaciones\IObtenerListaHabitacionesAD.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID\IObtenerHabitacionID.cs" />
+    <Compile Include="AccesoDatos\Reservas\ObtenerHabitaciones\IObternerReservasAD.cs" />
     <Compile Include="LogicaNegocio\General\GestionFechas\IFecha.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\AgregarHabitaciones\IAgregarHabitacionesLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\EditarHabitaciones\IEditarHabitacionLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\ListaDeHabitaciones\IObtenerListaHabitacionesLN.cs" />
+    <Compile Include="LogicaNegocio\Reservas\ObtenerReservas\IObtenerReservaLN.cs" />
     <Compile Include="ModelosUI\Habitaciones\HabitacionDTO.cs" />
+    <Compile Include="ModelosUI\Reservas\ReservasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
