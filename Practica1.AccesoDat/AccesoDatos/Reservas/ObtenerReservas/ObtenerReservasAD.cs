@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Reservas.ObtenerReserva
 {
-    internal class ObtenerReservasAD : IObternerReservasAD
+    public  class ObtenerReservasAD : IObternerReservasAD
     {
 
         private ObjetoContexto objetoContexto;
@@ -59,6 +59,6 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas.ObtenerReserva
             return listaReservas;
         }
 
-     
+       
     }
 }

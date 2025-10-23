@@ -25,7 +25,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.AgregarHabitacionAD
             HabitacionesAccesoDatos habitacionEnEntidad = ConvertirObjEntidad(HabitacionNueva);
 
             int cantidadHabitacionAgregada = 0;
-            _ObjetoContexto.InfoHabitaciones.Add(habitacionEnEntidad);//
+            _ObjetoContexto.HABITACIONES.Add(habitacionEnEntidad);//
             cantidadHabitacionAgregada =await _ObjetoContexto.SaveChangesAsync(); //Le decimos que lo espere ya que es Async 
             return cantidadHabitacionAgregada;
         }

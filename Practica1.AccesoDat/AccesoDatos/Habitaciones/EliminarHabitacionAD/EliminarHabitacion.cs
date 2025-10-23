@@ -16,13 +16,13 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.EliminarHabitacionAD
         }
         public int Eliminar(int IDHabitacionEliminar) {
             int cantidadRegistrosAfectados = 0;
-            HabitacionesAccesoDatos habitacionEliminar = _ObjetoContexto.InfoHabitaciones //bUSCAMOS LA HABITACION A ELIMINAR 
+            HabitacionesAccesoDatos habitacionEliminar = _ObjetoContexto.HABITACIONES //bUSCAMOS LA HABITACION A ELIMINAR 
                 .Where(HabitacionBuscar => HabitacionBuscar.ID == IDHabitacionEliminar)
                 .FirstOrDefault();
 
             if (habitacionEliminar != null) //Verificamos si la habitacion existe
             { 
-                _ObjetoContexto.InfoHabitaciones.Remove(habitacionEliminar);
+                _ObjetoContexto.HABITACIONES.Remove(habitacionEliminar);
                 cantidadRegistrosAfectados = _ObjetoContexto.SaveChanges();
             }
             return cantidadRegistrosAfectados;
