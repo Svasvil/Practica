@@ -52,8 +52,11 @@
     <Compile Include="Habitaciones\AgregarHabitacionesLN\AgregarHabitacionesLN.cs" />
     <Compile Include="Habitaciones\EditarHabitacionesLN\EditarHabitacionLN.cs" />
     <Compile Include="Habitaciones\ListarHabitacionesLN\ObtenerListaHabitacionesLN.cs" />
+    <Compile Include="Habitaciones\ObtenerHabitacionesDisponiblesLN\ObtenerHabitacionesDisponiblesLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservas\ObtenerReserva\ObtenerReservasLN.cs" />
+    <Compile Include="Reservas\AgregarReservaLN\AgregarReservaLN.cs" />
+    <Compile Include="Reservas\BuscarReservaLN\BuscarReservaLN.cs" />
+    <Compile Include="Reservas\ObtenerReservaLN\ObtenerReservasLN.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

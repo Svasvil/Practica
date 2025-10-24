@@ -1,4 +1,5 @@
-﻿using Practica1.Abstracciones.ModelosUI.Reservas;
+﻿using Practica1.Abstracciones.ModelosUI.Habitaciones;
+using Practica1.Abstracciones.ModelosUI.Reservas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Practica1.Abstracciones.AccesoDatos.Reservas.AgregarReserva
 {
     public  interface IAgregarReservaAD
     {
-        void Ejecutar(ReservacionesDTO reserva);
+        Task<int> Agregar(ReservacionesDTO NuevaReserva);
     }
 }

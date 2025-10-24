@@ -1,4 +1,5 @@
-﻿using Practica1.Abstracciones.ModelosUI.Reservas;
+﻿using Practica1.Abstracciones.ModelosUI.Habitaciones;
+using Practica1.Abstracciones.ModelosUI.Reservas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Practica1.Abstracciones.LogicaNegocio.Reservas.ObtenerReservasDisponib
 {
     public  interface IObtenerHabitacionesDisponiblesLN
     {
-        List<ReservacionesDTO> Obtener();
+        List<HabitacionDTO> Obtener();
     }
 }

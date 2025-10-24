@@ -10,6 +10,6 @@ namespace Practica1.Abstracciones.LogicaNegocio.Reservas.BuscarReserva
 {
     public  interface IBuscarReservaLN
     {
-        List<ReservaDetalleDTO> BuscarPorIdHabitacion(int IdHabitacion);
+        ReservaDetalleDTO BuscarPorIdHabitacion(int IdHabitacion);
     }
 }

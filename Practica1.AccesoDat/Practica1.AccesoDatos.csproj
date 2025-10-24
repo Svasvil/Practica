@@ -59,6 +59,8 @@
     <Compile Include="AccesoDatos\Habitaciones\EliminarHabitacionAD\EliminarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ListaHabitacionesAD\ObtenerListaHabitaciones.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID_AD\ObtenerHabitacionID.cs" />
+    <Compile Include="AccesoDatos\Reservas\AgregarReserva\AgregarReservaAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\BuscarReserva\BuscarReservaAD.cs" />
     <Compile Include="AccesoDatos\Reservas\ObtenerReservas\ObtenerReservasAD.cs" />
     <Compile Include="Entidades\HabitacionesAccesoDatos.cs" />
     <Compile Include="Entidades\ReservasAccesoDatos.cs" />

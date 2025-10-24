@@ -9,6 +9,6 @@ namespace Practica1.Abstracciones.LogicaNegocio.Reservas.AgregarReservas
 {
     public  interface IAgregarReservaLN
     {
-        void Ejecutar(ReservacionesDTO reserva);
+        Task<int> Ejecutar(ReservacionesDTO reserva);
     }
 }

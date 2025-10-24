@@ -1,4 +1,5 @@
-﻿using Practica1.Abstracciones.ModelosUI.Reservas;
+﻿using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
+using Practica1.Abstracciones.ModelosUI.Reservas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Practica1.Abstracciones.AccesoDatos.Reservas.BuscarReserva
 {
     public  interface IBuscarReservaAD
     {
-        List<ReservacionesDTO> BuscarPorIdHabitacion(int IdHabitacion);
+        ReservaDetalleDTO BuscarPorIdReserva(int IdReserva);
     }
 }
