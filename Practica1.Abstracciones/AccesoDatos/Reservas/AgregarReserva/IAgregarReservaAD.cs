@@ -1,0 +1,15 @@
+﻿using Practica1.Abstracciones.ModelosUI.Reservas;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica1.Abstracciones.AccesoDatos.Reservas.AgregarReserva
+{
+    public  interface IAgregarReservaAD
+    {
+        void Ejecutar(ReservacionesDTO reserva);
+    }
+}

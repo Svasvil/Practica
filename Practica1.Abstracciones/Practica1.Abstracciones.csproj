@@ -52,19 +52,27 @@
     <Compile Include="AccesoDatos\Habitaciones\EditarHabitacion\IEditarHabitacion.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ListaHabitaciones\IObtenerListaHabitacionesAD.cs" />
     <Compile Include="AccesoDatos\Habitaciones\ObtenerHabitacionID\IObtenerHabitacionID.cs" />
-    <Compile Include="AccesoDatos\Reservas\ObtenerHabitaciones\IObternerReservasAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\AgregarReserva\IAgregarReservaAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\BuscarReserva\IBuscarReservaAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\ObtenerHabitacionesDisponiblesAD\IObtenerHabitacionesDisponiblesAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\ObtenerReservas\IObternerReservasAD.cs" />
     <Compile Include="LogicaNegocio\General\GestionFechas\IFecha.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\AgregarHabitaciones\IAgregarHabitacionesLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\EditarHabitaciones\IEditarHabitacionLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\ListaDeHabitaciones\IObtenerListaHabitacionesLN.cs" />
+    <Compile Include="LogicaNegocio\Reservas\AgregarReservas\IAgregarReservaLN.cs" />
+    <Compile Include="LogicaNegocio\Reservas\BuscarReserva\IBuscarReservaLN.cs" />
+    <Compile Include="LogicaNegocio\Reservas\ObtenerReservasDisponibles\IObtenerHabitacionesDisponiblesLN.cs" />
     <Compile Include="LogicaNegocio\Reservas\ObtenerReservas\IObtenerReservaLN.cs" />
     <Compile Include="ModelosUI\Habitaciones\HabitacionDTO.cs" />
+    <Compile Include="ModelosUI\ReservaDetalles\ReservaDetalleDTO.cs" />
     <Compile Include="ModelosUI\Reservas\ReservasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

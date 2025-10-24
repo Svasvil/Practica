@@ -25,16 +25,15 @@ namespace Practica1.UI.Controllers
         }
 
         // GET: Reservas/Details/5
-        public ActionResult ListaReservasHabitacion(int? idHabitacion) // Observa el '?'
+        public ActionResult ListaReservasHabitacion(int? idHabitacion) 
         {
-            // Debes manejar el caso donde idHabitacion sea null
+            //Aca validamos que si tiene un id , en caso de que no tenga nos manda de vuelta a la lista normal.
             if (!idHabitacion.HasValue)
             {
-                // Redirigir, mostrar error o mostrar una lista vacía/completa
                 return View("ListaReservasHabitacion", new List<ReservacionesDTO>());
             }
 
-            // Usar .Value para obtener el int subyacente
+         
             List<ReservacionesDTO> lista = _obtenerReservaLN.Obtener(idHabitacion.Value);
             return View("ListaReservasHabitacion", lista);
         }
