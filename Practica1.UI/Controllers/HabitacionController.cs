@@ -10,6 +10,7 @@ using Practica1.LogicaNegocio.Habitaciones.AgregarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.EditarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ObtenerHabitacionID;
+using Practica1.LogicaNegocio.Reservas.BuscarReservaLN;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,7 +31,10 @@ namespace Practica1.UI.Controllers
             _ObtenerListaHabitacionesLN = new ObtenerListaHabitacionesLN();
             _AgregarHabitacionesLN = new AgregarHabitacionesLN();
             _EditarHabitacionLN = new EditarHabitacionLN();
-    _ObtenerHabitacionLN = new ObtenerHabitacionLN();         }
+            //_ObtenerHabitacionLN = new ObtenerHabitacionLN();
+            _BuscarReservaLN = new BuscarReservaLN(); 
+        }
+
         public ActionResult Lista_de_Habitaciones()
         {
             List<HabitacionDTO> listaHabitaciones = _ObtenerListaHabitacionesLN.Obtener();
@@ -43,9 +47,7 @@ namespace Practica1.UI.Controllers
 
             if (reservaDetalle == null)
             {
-             
                 return RedirectToAction("ListaReservasHabitacion");
-
             }
 
             return View(reservaDetalle);
@@ -59,8 +61,10 @@ namespace Practica1.UI.Controllers
         [HttpPost]
         public async Task<ActionResult> Crear_Habitacion(HabitacionDTO NuevaHabitacion)
         {
+          
             try
             {
+                NuevaHabitacion.Estado = true;
                 int CantidadHabitacionAgregada = await _AgregarHabitacionesLN.Agregar(NuevaHabitacion);
                 return RedirectToAction("Lista_de_Habitaciones", "Habitacion");
             }
@@ -69,15 +73,15 @@ namespace Practica1.UI.Controllers
                 return View();
             }
         }
-        public async Task<ActionResult> Editar_HabitacionAsync(int id)
+
+        public async Task<ActionResult> Editar_Habitacion(int id)
         {
             HabitacionDTO habitacion = await _ObtenerHabitacionLN.Obtener(id);
-            habitacion.ID  = id;
+            habitacion.ID = id;
             return View(habitacion);
         }
 
         [HttpPost]
-  
         public async Task<ActionResult> Editar_Habitacion(HabitacionDTO HabitacionEditada)
         {
             try

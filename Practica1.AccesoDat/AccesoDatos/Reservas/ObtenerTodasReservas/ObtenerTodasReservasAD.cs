@@ -1,5 +1,6 @@
 ﻿using Practica1.Abstracciones.AccesoDatos.Reservas.ObtenerTodasReservasAd;
 using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
+using Practica1.AccesoDat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,13 @@ using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Reservas
 {
-    public  class ObtenerTodasReservasAD : IObtenerTodasReservasAd
+    public class ObtenerTodasReservasAD : IObtenerTodasReservasAd
     {
         private readonly ObjetoContexto _ObjetoContexto;
         public ObtenerTodasReservasAD()
         {
             _ObjetoContexto = new ObjetoContexto();
         }
-
-
 
         //obtenemos una con el join para sacar el ID de la habitacion
         public List<ReservaDetalleDTO> ObtenerTodas(int idHabitacion)
@@ -41,8 +40,8 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas
                                                          FechaFinReserva = reserva.FechaFinReserva,
                                                          FechaDeRegistro = reserva.FechaDeRegistro,
                                                          IdHabitacion = reserva.IdHabitacion,
-                                                             CodigoDeHabitacion = habitacion.Codigo, 
-                                                         NombreDeHabitacion = habitacion.Nombre, 
+                                                         CodigoDeHabitacion = habitacion.Codigo,
+                                                         NombreDeHabitacion = habitacion.Nombre,
                                                          CantidadDeHuespedesPermitidos = habitacion.CantidadHuespedesAdmitidos,
                                                          Ubicacion = habitacion.Ubicacion,
                                                          TipoDeHabitacion = habitacion.TipoHabitacion,
@@ -51,6 +50,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas
 
             return listaReservas;
         }
+
         //obtenemos todas 
         public List<ReservaDetalleDTO> ObtenerTodas()
         {
@@ -83,8 +83,4 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas
             return listaReservas;
         }
     }
-
 }
-
-
-

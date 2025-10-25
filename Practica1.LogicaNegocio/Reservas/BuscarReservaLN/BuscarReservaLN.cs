@@ -14,6 +14,10 @@ namespace Practica1.LogicaNegocio.Reservas.BuscarReservaLN
     {
         private IBuscarReservaAD _buscarReservaAD;
 
+        public BuscarReservaLN()
+        {
+        }
+
         public BuscarReservaLN(IBuscarReservaAD buscarReservaAD)
         {
             _buscarReservaAD = buscarReservaAD;

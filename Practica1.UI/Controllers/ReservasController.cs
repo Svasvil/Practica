@@ -1,5 +1,5 @@
-﻿using Practica1.Abstracciones.AccesoDatos.Habitaciones.ListaHabitaciones;
-using Practica1.Abstracciones.AccesoDatos.Reservas.AgregarReserva;
+﻿using Practica1.Abstracciones.AccesoDatos.Reservas.AgregarReserva;
+using Practica1.Abstracciones.AccesoDatos.Reservas.ObtenerTodasReservasAd;
 using Practica1.Abstracciones.AccesoDatos.Reservas.BuscarReserva;
 using Practica1.Abstracciones.AccesoDatos.Reservas.ObtenerTodasReservasAd;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.AgregarReservas;
@@ -8,17 +8,16 @@ using Practica1.Abstracciones.LogicaNegocio.Reservas.ObtenerReservas;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.ObtenerReservasDisponibles;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.ObternerTodasReservasLN;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
-using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
-using Practica1.Abstracciones.AccesoDatos.Reservas.ObtenerTodasReservasAd;
 using Practica1.AccesoDat.AccesoDatos.Reservas;
+using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
 using Practica1.Abstracciones.ModelosUI.Reservas;
 using Practica1.AccesoDat.AccesoDatos.Habitaciones.ListaRepuestosAD;
-using Practica1.AccesoDat.AccesoDatos.Reservas;
 using Practica1.AccesoDat.AccesoDatos.Reservas.AgregarReserva;
+
 using Practica1.AccesoDat.AccesoDatos.Reservas.BuscarReserva;
+
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ObtenerHabitacionesDisponiblesLN;
-using Practica1.LogicaNegocio.Reservas.AgregarReservaLN;
 using Practica1.LogicaNegocio.Reservas.AgregarReservaLN;
 using Practica1.LogicaNegocio.Reservas.BuscarReservaLN;
 using Practica1.LogicaNegocio.Reservas.ObtenerReserva;
@@ -28,7 +27,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-
 namespace Practica1.UI.Controllers
 {
     public class ReservasController : Controller
@@ -50,8 +48,8 @@ namespace Practica1.UI.Controllers
             IAgregarReservaAD agregarReservaAD = new AgregarReservaAD();
             _AgregarReservaLN = new AgregarReservaLN(agregarReservaAD, habitacionesAD);
             _buscarReservaLN = new BuscarReservaLN(new BuscarReservaAD());
-            //IObtenerTodasReservasAd reservasAd = new ObtenerTodasReservasAD();
-            //_reservasLN = new ObtenerTodasReservasLN(reservasAd);
+            IObtenerTodasReservasAd reservasAd = new ObtenerTodasReservasAD();
+            _reservasLN = new ObtenerTodasReservasLN(reservasAd);
         }
 
 

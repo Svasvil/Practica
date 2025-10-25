@@ -10,7 +10,8 @@ namespace Practica1.AccesoDat
 {
     public  class ObjetoContexto : DbContext
     {
-        public ObjetoContexto() {
+        public ObjetoContexto()  : base("ObjetoContexto")
+        {
             Database.SetInitializer<ObjetoContexto>(null);
         }
 
