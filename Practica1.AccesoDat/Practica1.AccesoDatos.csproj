@@ -62,6 +62,7 @@
     <Compile Include="AccesoDatos\Reservas\AgregarReserva\AgregarReservaAD.cs" />
     <Compile Include="AccesoDatos\Reservas\BuscarReserva\BuscarReservaAD.cs" />
     <Compile Include="AccesoDatos\Reservas\ObtenerReservas\ObtenerReservasAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\ObtenerTodasReservas\ObtenerTodasReservasAD.cs" />
     <Compile Include="Entidades\HabitacionesAccesoDatos.cs" />
     <Compile Include="Entidades\ReservasAccesoDatos.cs" />
     <Compile Include="ObjetoContexto.cs" />

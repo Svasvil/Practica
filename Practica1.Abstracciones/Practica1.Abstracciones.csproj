@@ -56,6 +56,7 @@
     <Compile Include="AccesoDatos\Reservas\BuscarReserva\IBuscarReservaAD.cs" />
     <Compile Include="AccesoDatos\Reservas\ObtenerHabitacionesDisponiblesAD\IObtenerHabitacionesDisponiblesAD.cs" />
     <Compile Include="AccesoDatos\Reservas\ObtenerReservas\IObternerReservasAD.cs" />
+    <Compile Include="AccesoDatos\Reservas\ObtenerTodasReservasAd\IObtenerTodasReservasAD.cs" />
     <Compile Include="LogicaNegocio\General\GestionFechas\IFecha.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\AgregarHabitaciones\IAgregarHabitacionesLN.cs" />
     <Compile Include="LogicaNegocio\Habitaciones\EditarHabitaciones\IEditarHabitacionLN.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="LogicaNegocio\Reservas\BuscarReserva\IBuscarReservaLN.cs" />
     <Compile Include="LogicaNegocio\Reservas\ObtenerReservasDisponibles\IObtenerHabitacionesDisponiblesLN.cs" />
     <Compile Include="LogicaNegocio\Reservas\ObtenerReservas\IObtenerReservaLN.cs" />
+    <Compile Include="LogicaNegocio\Reservas\ObternerTodasReservas\IObtenerTodasReservasLN.cs" />
     <Compile Include="ModelosUI\Habitaciones\HabitacionDTO.cs" />
     <Compile Include="ModelosUI\ReservaDetalles\ReservaDetalleDTO.cs" />
     <Compile Include="ModelosUI\Reservas\ReservasDTO.cs" />

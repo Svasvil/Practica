@@ -3,56 +3,48 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Caso 1</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-    <div class="container">
-        @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("Habitaciones.", "Lista_de_Habitaciones", "Habitacion", new { area = "" }, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("Reservas.", "ListaReservasHabitacion", "Reservas", new { area = "" }, new { @class = "nav-link" })</li>
-                <!-- el orden de esto es asi|  nombre que se muestra | Nombre de la view a buscar(nombre del controlador , tiene que ser el mismo  ) | Controllador -->
-            </ul>
-
-
-        </div>
-    </div>
-</nav>
-
 
 <body>
-
-    <h1> Caso I sebas VASQUEZ</h1>
-
-    @using (Html.BeginForm("BuscarReserva", "Reservas", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-        <div class="form-inline">
-            <label for="idReservacion" class="mr-2">Buscar por ID:</label>
-            <input type="number" name="idReservacion" class="form-control mr-2" placeholder="Ingrese ID" required />
-            <button type="submit" class="btn btn-primary">Buscar</button>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Hotel los patitos", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Habitaciones.", "Lista_de_Habitaciones", "Habitacion", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Reservas.", "ListaReservasHabitacion", "Reservas", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
         </div>
-    }
-
-    <p>
-
-
-
-        <a href="@Url.Action("Listar", "Reservas")" class="btn btn-success">
-            Agregar nueva reserva
-        </a>
-    </p>
+    </nav>
 
     <div class="container body-content">
+        <h4>Caso I Sebas Vasquez</h4>
+
+        <!-- Formulario de búsqueda corregido -->
+        @using (Html.BeginForm("Detalles", "Reservas", FormMethod.Get))
+        {
+            <div class="form-inline mb-3">
+                <label for="id" class="mr-2">Buscar por ID:</label>
+                <input type="number" name="id" class="form-control mr-2" placeholder="Ingrese ID" required />
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        }
+
+        <p>
+            <a href="@Url.Action("Listar", "Reservas")" class="btn btn-success">
+                Agregar nueva reserva
+            </a>
+        </p>
+
         @RenderBody()
 
         <footer>

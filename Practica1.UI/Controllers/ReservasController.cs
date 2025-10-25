@@ -5,6 +5,7 @@ using Practica1.Abstracciones.LogicaNegocio.Reservas.AgregarReservas;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.BuscarReserva;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.ObtenerReservas;
 using Practica1.Abstracciones.LogicaNegocio.Reservas.ObtenerReservasDisponibles;
+using Practica1.Abstracciones.LogicaNegocio.Reservas.ObternerTodasReservasLN;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
 using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
 using Practica1.Abstracciones.ModelosUI.Reservas;
@@ -17,6 +18,7 @@ using Practica1.LogicaNegocio.Reservas.AgregarReservaLN;
 using Practica1.LogicaNegocio.Reservas.AgregarReservaLN;
 using Practica1.LogicaNegocio.Reservas.BuscarReservaLN;
 using Practica1.LogicaNegocio.Reservas.ObtenerReserva;
+using Practica1.LogicaNegocio.Reservas.ObtenerTodasReservasLN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,21 +33,20 @@ namespace Practica1.UI.Controllers
         private readonly IObtenerHabitacionesDisponiblesLN _ObtenerHabitacionesLN;
         private readonly IBuscarReservaLN _BuscarReservaLN;
         private readonly IAgregarReservaLN _AgregarReservaLN;
+        private readonly IBuscarReservaLN _buscarReservaLN;
+        private readonly IObtenerTodasReservasLN _reservasLN;
 
         public ReservasController()
         {
-            // Una sola instancia de AD para reutilizar
             IObtenerListaHabitacionesAD habitacionesAD = new ObtenerListaHabitaciones();
-
             _ObtenerReservaLN = new ObtenerReservasLN();
-
             IBuscarReservaAD buscarReservaAD = new BuscarReservaAD();
             _BuscarReservaLN = new BuscarReservaLN(buscarReservaAD);
-
             _ObtenerHabitacionesLN = new ObtenerHabitacionesDisponiblesLN(habitacionesAD);
-
-            IAgregarReservaAD agregarReservaAD = new AgregarReservaAD();
+                        IAgregarReservaAD agregarReservaAD = new AgregarReservaAD();
             _AgregarReservaLN = new AgregarReservaLN(agregarReservaAD, habitacionesAD);
+            _buscarReservaLN = new BuscarReservaLN(new BuscarReservaAD());
+            _reservasLN = new ObtenerTodasReservasLN();
         }
 
 
@@ -58,14 +59,20 @@ namespace Practica1.UI.Controllers
         // GET: Reservas/ListaReservasHabitacion/5
         public ActionResult ListaReservasHabitacion(int? idHabitacion)
         {
-            if (!idHabitacion.HasValue)
+            List<ReservaDetalleDTO> lista;
+
+            if (idHabitacion.HasValue)
             {
-                return View("ListaReservasHabitacion", new List<ReservacionesDTO>());
+                lista = _reservasLN.ObtenerPorIdHabitacion(idHabitacion.Value);
+            }
+            else
+            {
+                lista = _reservasLN.ObtenerTodas();
             }
 
-            List<ReservacionesDTO> lista = _ObtenerReservaLN.Obtener(idHabitacion.Value);
-            return View("ListaReservasHabitacion", lista);
+            return View(lista);
         }
+    
 
         // GET: Reservas/Listar
         [HttpGet]
@@ -86,11 +93,18 @@ namespace Practica1.UI.Controllers
         // GET: Reservas/Detalles/5
         public ActionResult Detalles(int id)
         {
-            ReservaDetalleDTO reservaDetalle = _BuscarReservaLN.BuscarPorIdHabitacion(id);
+            ReservaDetalleDTO reservaDetalle = _buscarReservaLN.BuscarPorIdHabitacion(id);
+
+            if (reservaDetalle == null)
+            {
+               
+                return RedirectToAction("ListaReservasHabitacion");
+            }
+
             return View(reservaDetalle);
         }
 
-       
+
 
         // POST: Reservas/Reservar
         [HttpGet]

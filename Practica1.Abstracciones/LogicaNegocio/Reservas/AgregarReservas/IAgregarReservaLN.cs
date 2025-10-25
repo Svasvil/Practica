@@ -10,5 +10,6 @@ namespace Practica1.Abstracciones.LogicaNegocio.Reservas.AgregarReservas
     public  interface IAgregarReservaLN
     {
         Task<int> Ejecutar(ReservacionesDTO reserva);
+        
     }
 }

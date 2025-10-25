@@ -57,6 +57,7 @@
     <Compile Include="Reservas\AgregarReservaLN\AgregarReservaLN.cs" />
     <Compile Include="Reservas\BuscarReservaLN\BuscarReservaLN.cs" />
     <Compile Include="Reservas\ObtenerReservaLN\ObtenerReservasLN.cs" />
+    <Compile Include="Reservas\ObtenerTodasReservasLN\ObtenerTodasReservasLN.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

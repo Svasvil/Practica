@@ -1,7 +1,9 @@
 ﻿using Practica1.Abstracciones.LogicaNegocio.Habitaciones.AgregarHabitaciones;
 using Practica1.Abstracciones.LogicaNegocio.Habitaciones.EditarHabitaciones;
 using Practica1.Abstracciones.LogicaNegocio.Habitaciones.ListaDeHabitaciones;
+using Practica1.Abstracciones.LogicaNegocio.Reservas.BuscarReserva;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
+using Practica1.Abstracciones.ModelosUI.ReservaDetalles;
 using Practica1.LogicaNegocio.Habitaciones.AgregarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.EditarHabitacionesLN;
 using Practica1.LogicaNegocio.Habitaciones.ListarHabitacionesLN;
@@ -17,7 +19,8 @@ namespace Practica1.UI.Controllers
         private readonly IObtenerListaHabitacionesLN _ObtenerListaHabitacionesLN;
         private readonly IAgregarHabitacionesLN _AgregarHabitacionesLN;
         private readonly IEditarHabitacionLN _EditarHabitacionLN;
-       // private readonly ObtenerHabitacionID _ObtenerHabitacionID;
+        //private readonly ObtenerHabitacionID _ObtenerHabitacionID;
+        private readonly IBuscarReservaLN _BuscarReservaLN;
 
         public HabitacionController()
         {
@@ -32,9 +35,18 @@ namespace Practica1.UI.Controllers
             return View(listaHabitaciones);
         }
 
-        public ActionResult Detalles_Habitacion(int id)
+        public ActionResult Detalles(int id)
         {
-            return View();
+            ReservaDetalleDTO reservaDetalle = _BuscarReservaLN.BuscarPorIdHabitacion(id);
+
+            if (reservaDetalle == null)
+            {
+             
+                return RedirectToAction("ListaReservasHabitacion");
+
+            }
+
+            return View(reservaDetalle);
         }
 
         public ActionResult Crear_Habitacion()
