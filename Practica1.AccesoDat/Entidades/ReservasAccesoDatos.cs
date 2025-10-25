@@ -7,6 +7,8 @@ namespace Practica1.AccesoDat.Entidades
     [Table("RESERVACIONES")]
     public class ReservasAccesoDatos
     {
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("Id")]
         public int Id { get; set; }

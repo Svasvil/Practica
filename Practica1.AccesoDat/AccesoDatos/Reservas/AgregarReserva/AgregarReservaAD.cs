@@ -2,9 +2,6 @@
 using Practica1.Abstracciones.ModelosUI.Reservas;
 using Practica1.AccesoDat.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Reservas.AgregarReserva
@@ -18,28 +15,27 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas.AgregarReserva
             _ObjetoContexto = new ObjetoContexto();
         }
 
- 
-
         public async Task<int> Agregar(ReservacionesDTO reserva)
         {
-            // Pasamos el objeto DTO a entidad lo que hacemos en el metodo ConvertirObjEntidad
-            ReservasAccesoDatos reservaEnEntidad = ConvertirObjEntidad(reserva);
-            int idReservaGenerada = 0;
+            
+            if (reserva.FechaNacimiento.Year < 1753)
+            {
+                throw new Exception("La fecha de nacimiento debe ser posterior al año 1753.");
+            }
+                      
+            ReservasAccesoDatos reservaEntidad = ConvertirObjEntidad(reserva);
+            _ObjetoContexto.RESERVACIONES.Add(reservaEntidad);
+            await _ObjetoContexto.SaveChangesAsync();
 
-            _ObjetoContexto.RESERVACIONES.Add(reservaEnEntidad);
-            await _ObjetoContexto.SaveChangesAsync(); // Le decimos que lo espere ya que es Async
-
-            idReservaGenerada = reservaEnEntidad.Id; // Obtenemos el ID generado
-
-            return idReservaGenerada;
+            return reservaEntidad.Id;
         }
 
-        // Metodo auxiliar
+        // Método auxiliar
         private ReservasAccesoDatos ConvertirObjEntidad(ReservacionesDTO reserva)
         {
             return new ReservasAccesoDatos
             {
-                Id = reserva.Id,
+                // NO incluir Id, lo genera automáticamente la base de datos
                 NombreDeLaPersona = reserva.NombreDeLaPersona,
                 Identificacion = reserva.Identificacion,
                 Telefono = reserva.Telefono,

@@ -63,7 +63,7 @@ namespace Practica1.UI.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+  
         public async Task<ActionResult> Editar_Habitacion(HabitacionDTO HabitacionEditada)
         {
             try

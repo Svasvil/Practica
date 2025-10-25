@@ -56,6 +56,10 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Practica1.AccesoDat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Practica1.AccesoDat.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -207,6 +211,9 @@
     <Content Include="Views\Habitacion\Crear_Habitacion.cshtml" />
     <Content Include="Views\Habitacion\Eliminar_Habitacion.cshtml" />
     <Content Include="Views\Reservas\ListaReservasHabitacion.cshtml" />
+    <Content Include="Views\Reservas\Listar.cshtml" />
+    <Content Include="Views\Reservas\Detalles.cshtml" />
+    <Content Include="Views\Reservas\Reservar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -243,6 +250,10 @@
     <ProjectReference Include="..\Practica1.Abstracciones\Practica1.Abstracciones.csproj">
       <Project>{f7772818-e0c0-4045-a7db-acbd75b34ce9}</Project>
       <Name>Practica1.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Practica1.AccesoDat\Practica1.AccesoDatos.csproj">
+      <Project>{B771B3C6-E570-4142-AABC-6E55BF8D622B}</Project>
+      <Name>Practica1.AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Practica1.LogicaNegocio\Practica1.LogicaNegocio.csproj">
       <Project>{BB8517C2-CF54-45B0-9C10-27DDF2D27306}</Project>

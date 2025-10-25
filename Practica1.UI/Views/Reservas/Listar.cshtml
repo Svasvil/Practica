@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Practica1.Abstracciones.ModelosUI.Habitaciones.HabitacionDTO>
+
+@{
+    ViewBag.Title = "Habitaciones Disponibles";
+}
+
+<h2>Habitaciones Disponibles para Reservar</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["Mensaje"]
+    </div>
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Buscar Reserva</h4>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("BuscarReserva", "Reservas", FormMethod.Post, new { @class = "form-inline" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="idReservacion">Número de Reservación:</label>
+                <input type="number" name="idReservacion" id="idReservacion" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Reserva</button>
+        }
+    </div>
+</div>
+
+<hr />
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre de Habitación</th>
+                <th>Cantidad de Huéspedes</th>
+                <th>Cantidad de Camas</th>
+                <th>Cantidad de Baños</th>
+                <th>Ubicación</th>
+                <th>Costo por Noche</th>
+                <th>Tipo de Habitación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CantidadCamas)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CantidadBanos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ubicacion)</td>
+                    <td>@item.CostoReserva.ToString("C")</td>
+                    <
+                    <td>
+                        @Html.ActionLink("Reservar", "Reservar", new { idHabitacion = item.ID }, new { @class = "btn btn-success btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No hay habitaciones disponibles en este momento.
+    </div>
+}

@@ -10,22 +10,18 @@ namespace Practica1.Abstracciones.ModelosUI.Reservas
 
         [Display(Name = "Nombre de la Persona")]
         [Required]
-     
         public string NombreDeLaPersona { get; set; }
 
         [Display(Name = "Identificacion")]
         [Required]
- 
         public string Identificacion { get; set; }
 
         [Display(Name = "Telefono")]
         [Required]
-   
         public string Telefono { get; set; }
 
         [Display(Name = "Correo")]
         [Required]
-      
         public string Correo { get; set; }
 
         [Display(Name = "Fecha de Nacimiento")]
@@ -34,11 +30,9 @@ namespace Practica1.Abstracciones.ModelosUI.Reservas
 
         [Display(Name = "Direccion")]
         [Required]
- 
         public string Direccion { get; set; }
 
         [Display(Name = "Monto Total")]
-        [Required]
         public decimal MontoTotal { get; set; }
 
         [Display(Name = "Fecha Inicio Reserva")]
@@ -49,8 +43,6 @@ namespace Practica1.Abstracciones.ModelosUI.Reservas
         [Required]
         public DateTime FechaFinReserva { get; set; }
 
-        [Display(Name = "Fecha de Registro")]
-        [Required]
         public DateTime FechaDeRegistro { get; set; }
 
         [Display(Name = "ID Habitacion")]

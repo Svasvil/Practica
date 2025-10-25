@@ -11,6 +11,6 @@ namespace Practica1.Abstracciones.AccesoDatos.Reservas.AgregarReserva
 {
     public  interface IAgregarReservaAD
     {
-        Task<int> Agregar(ReservacionesDTO NuevaReserva);
+        Task<int> Agregar(ReservacionesDTO nuevaReserva);
     }
 }

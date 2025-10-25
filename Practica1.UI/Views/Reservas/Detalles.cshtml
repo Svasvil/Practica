@@ -1,0 +1,162 @@
+﻿@model Practica1.Abstracciones.ModelosUI.ReservaDetalles.ReservaDetalleDTO
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>ReservaDetalleDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDeLaPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDeLaPersona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicioReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicioReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFinReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeRegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoDeHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoDeHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDeHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDeHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadDeHuespedesPermitidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadDeHuespedesPermitidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeHabitacionTexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeHabitacionTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostoDeReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostoDeReserva)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

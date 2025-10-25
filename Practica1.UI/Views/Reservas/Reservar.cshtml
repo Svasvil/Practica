@@ -1,0 +1,78 @@
+﻿@model Practica1.Abstracciones.ModelosUI.Reservas.ReservacionesDTO
+
+@using (Html.BeginForm("Reservar", "Reservas", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.NombreDeLaPersona)
+        @Html.TextBoxFor(m => m.NombreDeLaPersona)
+        @Html.ValidationMessageFor(m => m.NombreDeLaPersona)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Identificacion)
+        @Html.TextBoxFor(m => m.Identificacion)
+        @Html.ValidationMessageFor(m => m.Identificacion)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Telefono)
+        @Html.TextBoxFor(m => m.Telefono)
+        @Html.ValidationMessageFor(m => m.Telefono)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Correo)
+        @Html.TextBoxFor(m => m.Correo)
+        @Html.ValidationMessageFor(m => m.Correo)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.FechaNacimiento)
+        @Html.TextBoxFor(m => m.FechaNacimiento, "{0:yyyy-MM-dd}", new { type = "date" })
+        @Html.ValidationMessageFor(m => m.FechaNacimiento)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Direccion)
+        @Html.TextBoxFor(m => m.Direccion)
+        @Html.ValidationMessageFor(m => m.Direccion)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.FechaNacimiento)
+        @Html.TextBoxFor(m => m.FechaNacimiento, new
+        {
+            type = "date",
+            @class = "form-control",
+            required = "required",
+            min = "1900-01-01",  // Fecha mínima
+            max = DateTime.Now.ToString("yyyy-MM-dd")  // Máximo hoy
+        })
+        @Html.ValidationMessageFor(m => m.FechaNacimiento)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.FechaInicioReserva)
+        @Html.TextBoxFor(m => m.FechaInicioReserva, new { type = "date", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FechaInicioReserva)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.FechaFinReserva)
+        @Html.TextBoxFor(m => m.FechaFinReserva, new { type = "date", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FechaFinReserva)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.IdHabitacion, "Habitación")
+        @Html.DropDownListFor(m => m.IdHabitacion,
+            (SelectList)ViewBag.Habitaciones,
+            "-- Seleccione una habitación --",
+            new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.IdHabitacion)
+    </div>
+
+    <button type="submit">Agregar Reserva</button>
+}

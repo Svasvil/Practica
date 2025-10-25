@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ListaRepuestosAD
 {
-    public  class ObtenerListaHabitaciones : IObtenerListaHabitacionesAD
+    public class ObtenerListaHabitaciones : IObtenerListaHabitacionesAD
     {
         private ObjetoContexto objContexto;
 
@@ -17,12 +17,12 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ListaRepuestosAD
             objContexto = new ObjetoContexto();
         }
 
-        public List<HabitacionDTO> obtener() {
-
+        public List<HabitacionDTO> obtener()
+        {
             List<HabitacionDTO> listaHabitaciones = (from habitacion in objContexto.HABITACIONES
                                                      select new HabitacionDTO
                                                      {
-                                                         ID= habitacion.ID, 
+                                                         ID = habitacion.ID,
                                                          Codigo = habitacion.Codigo,
                                                          Nombre = habitacion.Nombre,
                                                          Ubicacion = habitacion.Ubicacion,
@@ -33,9 +33,9 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ListaRepuestosAD
                                                          CostoLimpieza = habitacion.CostoLimpieza,
                                                          CostoReserva = habitacion.CostoReserva,
                                                          TipoHabitacion = habitacion.TipoHabitacion,
-                                                         Estado = habitacion.Estado,
+                                                         Estado = habitacion.Estado, // bool directo
                                                          FechaRegistro = habitacion.FechaRegistro,
-                                                         FechaModificacion = habitacion.FechaModificacion 
+                                                         FechaModificacion = habitacion.FechaModificacion
                                                      }).ToList();
 
             return listaHabitaciones;
