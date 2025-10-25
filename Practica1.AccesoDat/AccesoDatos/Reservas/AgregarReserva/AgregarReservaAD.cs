@@ -18,10 +18,7 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas.AgregarReserva
         public async Task<int> Agregar(ReservacionesDTO reserva)
         {
             
-            if (reserva.FechaNacimiento.Year < 1753)
-            {
-                throw new Exception("La fecha de nacimiento debe ser posterior al año 1753.");
-            }
+           
                       
             ReservasAccesoDatos reservaEntidad = ConvertirObjEntidad(reserva);
             _ObjetoContexto.RESERVACIONES.Add(reservaEntidad);
@@ -30,12 +27,12 @@ namespace Practica1.AccesoDat.AccesoDatos.Reservas.AgregarReserva
             return reservaEntidad.Id;
         }
 
-        // Método auxiliar
+        // aux
         private ReservasAccesoDatos ConvertirObjEntidad(ReservacionesDTO reserva)
         {
             return new ReservasAccesoDatos
             {
-                // NO incluir Id, lo genera automáticamente la base de datos
+                
                 NombreDeLaPersona = reserva.NombreDeLaPersona,
                 Identificacion = reserva.Identificacion,
                 Telefono = reserva.Telefono,
