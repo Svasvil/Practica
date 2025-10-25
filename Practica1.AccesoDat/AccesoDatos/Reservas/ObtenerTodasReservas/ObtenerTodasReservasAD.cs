@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica1.AccesoDat.AccesoDatos.Reservas.ObtenerTodasReservas
+namespace Practica1.AccesoDat.AccesoDatos.Reservas
 {
     public  class ObtenerTodasReservasAD : IObtenerTodasReservasAd
     {

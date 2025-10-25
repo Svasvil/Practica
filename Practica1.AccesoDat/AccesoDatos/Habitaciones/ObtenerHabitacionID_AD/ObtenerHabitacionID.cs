@@ -1,19 +1,16 @@
 ﻿using Practica1.Abstracciones.AccesoDatos.Habitaciones.ObtenerHabitacionID;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD
 {
-    public class ObtenerHabitacionPorId : IObtenerHabitacionID
+    public class ObtenerHabitacionAD : IObtenerHabitacionID
     {
-        private ObjetoContexto _contexto;
+        private readonly ObjetoContexto _contexto;
 
-        public ObtenerHabitacionPorId()
+        public ObtenerHabitacionAD()
         {
             _contexto = new ObjetoContexto();
         }
@@ -24,6 +21,8 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD
                 .Where(h => h.ID == id)
                 .FirstOrDefaultAsync();
 
+            if (habitacion == null)
+                return null;
 
             return new HabitacionDTO
             {
@@ -44,5 +43,4 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD
             };
         }
     }
-
 }
