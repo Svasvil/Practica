@@ -26,10 +26,6 @@ namespace Practica1.LogicaNegocio.Reservas.AgregarReservaLN
             List<HabitacionDTO> habitaciones = _obtenerListaHabitacionesAD.obtener();
             HabitacionDTO habitacion = habitaciones.FirstOrDefault(h => h.ID == reserva.IdHabitacion && h.Estado);
 
-            if (habitacion == null)
-            {
-                throw new Exception("La habitación seleccionada no existe o no está disponible.");
-            }
 
             int cantidadDiasReserva = (reserva.FechaFinReserva.Date - reserva.FechaInicioReserva.Date).Days;
             reserva.MontoTotal = (cantidadDiasReserva * habitacion.CostoReserva) + habitacion.CostoLimpieza;

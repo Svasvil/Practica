@@ -1,6 +1,5 @@
 ﻿using Practica1.Abstracciones.AccesoDatos.Habitaciones.ObtenerHabitacionID;
 using Practica1.Abstracciones.ModelosUI.Habitaciones;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,39 +7,40 @@ namespace Practica1.AccesoDat.AccesoDatos.Habitaciones.ObtenerHabitacionID_AD
 {
     public class ObtenerHabitacionAD : IObtenerHabitacionID
     {
-        private readonly ObjetoContexto _contexto;
+        private ObjetoContexto objetoContexto;
 
         public ObtenerHabitacionAD()
         {
-            _contexto = new ObjetoContexto();
+            objetoContexto = new ObjetoContexto();
         }
 
         public async Task<HabitacionDTO> Obtener(int id)
         {
-            var habitacion = await _contexto.HABITACIONES
-                .Where(h => h.ID == id)
-                .FirstOrDefaultAsync();
+            HabitacionDTO habitacion = await Task.Run(() =>
+                (from h in objetoContexto.HABITACIONES
+                 where h.ID == id
+                 select new HabitacionDTO
+                 {
+                     ID = h.ID,
+                     Codigo = h.Codigo,
+                     Nombre = h.Nombre,
+                     Ubicacion = h.Ubicacion,
+                     CantidadHuespedesAdmitidos = h.CantidadHuespedesAdmitidos,
+                     CantidadCamas = h.CantidadCamas,
+                     CantidadBanos = h.CantidadBanos,
+                     ResponsableLimpieza = h.ResponsableLimpieza,
+                     CostoLimpieza = h.CostoLimpieza,
+                     CostoReserva = h.CostoReserva,
+                     TipoHabitacion = h.TipoHabitacion,
+                     Estado = h.Estado,
+                     FechaRegistro = h.FechaRegistro,
+                     FechaModificacion = h.FechaModificacion
+                 }).FirstOrDefault()
+            );
 
-            if (habitacion == null)
-                return null;
+           
 
-            return new HabitacionDTO
-            {
-                ID = habitacion.ID,
-                Codigo = habitacion.Codigo,
-                Nombre = habitacion.Nombre,
-                Ubicacion = habitacion.Ubicacion,
-                CantidadHuespedesAdmitidos = habitacion.CantidadHuespedesAdmitidos,
-                CantidadCamas = habitacion.CantidadCamas,
-                CantidadBanos = habitacion.CantidadBanos,
-                ResponsableLimpieza = habitacion.ResponsableLimpieza,
-                CostoLimpieza = habitacion.CostoLimpieza,
-                CostoReserva = habitacion.CostoReserva,
-                TipoHabitacion = habitacion.TipoHabitacion,
-                Estado = habitacion.Estado,
-                FechaRegistro = habitacion.FechaRegistro,
-                FechaModificacion = habitacion.FechaModificacion
-            };
+            return habitacion;
         }
     }
 }
