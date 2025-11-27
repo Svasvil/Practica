@@ -7,7 +7,10 @@
 <h2>Lista_de_Habitaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Crear_Habitacion")
+    @Html.ActionLink("Create New", "Crear_Habitacion") |
+    <button type="button" class="btn btn-primary" id="AbrirModal">
+        Ver habitaciones
+    </button>
 </p>
 <table class="table">
     <tr>
@@ -53,55 +56,82 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ubicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CantidadCamas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CantidadBanos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResponsableLimpieza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CostoLimpieza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CostoReserva)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoHabitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaModificacion)
-        </td>
-        <td>
-            <!-- el orden de esto es asi | display que se muestra | Nombre del metodo etc  -->
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadCamas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadBanos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResponsableLimpieza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoLimpieza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoReserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaModificacion)
+            </td>
+            <td>
+                <!-- el orden de esto es asi | display que se muestra | Nombre del metodo etc  -->
 
-            @Html.ActionLink("Editar", "Editar_Habitacion", new { id = 1 }) |
-            @Html.ActionLink("Details", "Editar_Habitacion", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+                @Html.ActionLink("Editar", "Editar_Habitacion", new { id = 1 }) |
+                @Html.ActionLink("Details", "Editar_Habitacion", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/Habitaciones/ListarHabitaciones.js"></script>
+}
+
+

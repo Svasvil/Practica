@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Practica1.Abstracciones.ModelosUI.Habitaciones.HabitacionDTO>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadHuespedesAdmitidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadCamas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadBanos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponsableLimpieza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoLimpieza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaModificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadCamas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadBanos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponsableLimpieza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoLimpieza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoReserva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoHabitacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaModificacion)
+        </td>
+     
+    </tr>
+}
+
+</table>

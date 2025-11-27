@@ -29,7 +29,6 @@
     <div class="container body-content">
         <h4>Caso I Sebas Vasquez</h4>
 
-        <!-- Formulario de búsqueda corregido -->
         @using (Html.BeginForm("Detalles", "Reservas", FormMethod.Get))
         {
             <div class="form-inline mb-3">
@@ -54,5 +53,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

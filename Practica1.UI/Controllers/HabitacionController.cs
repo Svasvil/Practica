@@ -41,6 +41,14 @@ namespace Practica1.UI.Controllers
             return View(listaHabitaciones);
         }
 
+
+        //Vista parcial.
+        public ActionResult ObtenerListaHabitacionesParcial(int id)
+        {
+            List<HabitacionDTO> listaHabitaciones = _ObtenerListaHabitacionesLN.Obtener();
+            return PartialView("_ListaParcialHabitaciones",listaHabitaciones);
+        }
+
         public ActionResult Detalles(int id)
         {
             ReservaDetalleDTO reservaDetalle = _BuscarReservaLN.BuscarPorIdHabitacion(id);

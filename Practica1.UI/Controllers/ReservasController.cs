@@ -85,6 +85,24 @@ namespace Practica1.UI.Controllers
             return View(habitaciones);
         }
 
+
+
+
+        // GET: Reservas/Listar
+        [HttpGet]
+        public ActionResult ListaHabitacionesParcial()
+        {
+            List<HabitacionDTO> habitaciones = _ObtenerHabitacionesLN.Obtener();
+            return PartialView("_ListaParcialReservas", habitaciones);
+        }
+
+
+
+
+
+
+
+
         // POST: Reservas/BuscarReserva
         [HttpPost]
         public ActionResult BuscarReserva(int idReservacion)
