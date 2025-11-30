@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.LogicaNegocio", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.AccesoDatos", "Practica1.AccesoDat\Practica1.AccesoDatos.csproj", "{B771B3C6-E570-4142-AABC-6E55BF8D622B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica1.UI.Identity", "Practica1.UI.Identity\Practica1.UI.Identity.csproj", "{F2FF9EAC-6750-435A-A38B-8D570F8E9AD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B771B3C6-E570-4142-AABC-6E55BF8D622B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2FF9EAC-6750-435A-A38B-8D570F8E9AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2FF9EAC-6750-435A-A38B-8D570F8E9AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2FF9EAC-6750-435A-A38B-8D570F8E9AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2FF9EAC-6750-435A-A38B-8D570F8E9AD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
