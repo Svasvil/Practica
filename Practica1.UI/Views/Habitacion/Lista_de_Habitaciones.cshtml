@@ -12,106 +12,107 @@
         Ver habitaciones
     </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ubicacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CantidadHuespedesAdmitidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CantidadCamas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CantidadBanos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ResponsableLimpieza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CostoLimpieza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CostoReserva)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoHabitacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaModificacion)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<table class="table" id="myTable">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ubicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantidadCamas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantidadBanos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResponsableLimpieza)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CostoLimpieza)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CostoReserva)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoHabitacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaModificacion)
-            </td>
-            <td>
-                <!-- el orden de esto es asi | display que se muestra | Nombre del metodo etc  -->
-
-                @Html.ActionLink("Editar", "Editar_Habitacion", new { id = 1 }) |
-                @Html.ActionLink("Details", "Editar_Habitacion", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ubicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadHuespedesAdmitidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadCamas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadBanos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResponsableLimpieza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoLimpieza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaModificacion)
+            </th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ubicacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadHuespedesAdmitidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadCamas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadBanos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResponsableLimpieza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostoLimpieza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostoReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoHabitacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaRegistro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaModificacion)
+                </td>
+                <td>
+                    <!-- el orden de esto es asi | display que se muestra | Nombre del metodo etc  -->
+
+                    @Html.ActionLink("Editar", "Editar_Habitacion", new { id = 1 }) |
+                    @Html.ActionLink("Details", "Editar_Habitacion", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
-<!-- Moda
 
-l -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

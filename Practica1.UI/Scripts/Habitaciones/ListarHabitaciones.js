@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    let table = new DataTable('#myTable');
     $("#AbrirModal").click(function () {
         $.ajax({
             url: 'ObtenerListaHabitacionesParcial',
