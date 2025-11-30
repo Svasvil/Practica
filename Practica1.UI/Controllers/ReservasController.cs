@@ -90,15 +90,10 @@ namespace Practica1.UI.Controllers
 
         [HttpGet]
         // Haz el 'id' opcional
-        public ActionResult ListaHabitacionesParcial(int? id)
+        public ActionResult ListaHabitacionesParcial(ReservacionesDTO Reservas)
         {
-            // Ahora debes verificar si id.HasValue antes de usarlo
-            if (!id.HasValue)
-            {
-                // Manejar el caso donde no hay ID si es necesario
-            }
-
-            List<ReservacionesDTO> habitaciones = _ObtenerReservaLN.Obtener();
+           
+          List<ReservacionesDTO> habitaciones = _ObtenerReservaLN.Obtener();
             return PartialView("ListaHabitacionesParcial", habitaciones);
         }
 
