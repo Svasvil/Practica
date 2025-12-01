@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Practica1.UI.Identity.Controllers
+namespace Practica1.UI.Controllers
 {
     public class HomeController : Controller
     {

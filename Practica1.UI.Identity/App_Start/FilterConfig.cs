@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Practica1.UI.Identity
+namespace Practica1.UI
 {
     public class FilterConfig
     {
